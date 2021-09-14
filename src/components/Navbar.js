@@ -1,0 +1,34 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ChatContext } from '../context/ChatProvider';
+
+const Navbar = () => {
+  const { usuario, ingresoUsuario, cerrarSesion } = React.useContext(
+    ChatContext
+  );
+
+  return (
+    <nav className="navbar navbar-dark bg-dark">
+      <span className="navbar-brand">Chat</span>
+      <div>
+        {usuario.estado ? (
+          <button
+            className="btn btn-outline-danger my-2 my-sm-0"
+            onClick={cerrarSesion}
+          >
+            Cerrar sesion
+          </button>
+        ) : (
+          <button
+            className="btn btn-outline-success my-2 my-sm-0"
+            onClick={ingresoUsuario}
+          >
+            Acceder
+          </button>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
