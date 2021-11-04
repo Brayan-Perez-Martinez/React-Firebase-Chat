@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Chat from './components/Chat';
 export default function App() {
   const { usuario } = React.useContext(ChatContext);
-  console.log(usuario);
   return usuario !== null ? (
     <div>
       <Navbar />
